@@ -1,1 +1,49 @@
-嘿嘿嘿~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给全世界最可爱的小仙女~</title>
+    <script type="text/javascript">
+        function xianshi(){
+ 
+            document.write("<h3>你的优点有：</h3>")
+            var youdian =["<p>美丽</p>","<p>小可爱</p>","<p>眼睛里有星星</p>","<p>细心</p>","<p>端庄</p>","<p>勇敢</p>",
+            "<p>聪明</p>","<p>贤惠</p>","<p>鸡贼</p>","<p>乖巧</p>","<p>善良</p>","<p>有气质</p>","<p>诚实</p>",
+            "<p>有责任心</p>","<p>坚强</p>","<p>朴素</p>","<p>小鸟依人</p>","<p>巴拉巴拉</p>","<p>以后想到再说</p>"];
+           
+            for(var i=0, time=500;i<19;i++,time=time+150){
+                setTimeout(function(i,youdian){document.write(youdian[i])},time,i,youdian);             
+            }
+
+
+        }
+    </script>
+    <style >
+       #para1{
+
+        text-align: center;
+
+           /* width: 200px;
+           height: 100px; */
+      
+       }
+       #para2{
+
+        float: left;
+           width: 40%;
+           height: 100%;
+       }
+    </style>
+</head>
+<body>
+    
+    <!-- <div id="para2"></div> -->
+    <div id="para1">
+            <input type="button" value="点击一下,嘿嘿" onclick="xianshi() ">
+    </div>
+
+
+</body>
+</html>
