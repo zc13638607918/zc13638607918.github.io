@@ -1,49 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>给全世界最可爱的小仙女~</title>
     <script type="text/javascript">
-        function xianshi(){
- 
-            document.write("<h3>你的优点有：</h3>")
-            var youdian =["<p>美丽</p>","<p>小可爱</p>","<p>眼睛里有星星</p>","<p>细心</p>","<p>端庄</p>","<p>勇敢</p>",
-            "<p>聪明</p>","<p>贤惠</p>","<p>鸡贼</p>","<p>乖巧</p>","<p>善良</p>","<p>有气质</p>","<p>诚实</p>",
-            "<p>有责任心</p>","<p>坚强</p>","<p>朴素</p>","<p>小鸟依人</p>","<p>巴拉巴拉</p>","<p>以后想到再说</p>"];
-           
-            for(var i=0, time=500;i<19;i++,time=time+150){
-                setTimeout(function(i,youdian){document.write(youdian[i])},time,i,youdian);             
-            }
+        var youdian = ["<p>美丽</p>", "<p>小可爱</p>", "<p>眼睛里有星星</p>", "<p>细心</p>", "<p>端庄</p>", "<p>勇敢</p>",
+            "<p>聪明</p>", "<p>贤惠</p>", "<p>鸡贼</p>", "<p>乖巧</p>", "<p>善良</p>", "<p>有气质</p>", "<p>诚实</p>",
+            "<p>有责任心</p>", "<p>坚强</p>", "<p>朴素</p>", "<p>小鸟依人</p>", "<p>巴拉巴拉</p>", "<p>以后想到再说</p>"];
 
+        var colors = ["bisque", "red", "lawngreen", "aqua", "pink", "violet", "chocolate", "sandybrown", "deepskyblue", "orange", "gold"];
+
+        var position_x = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"];
+        var position_y = ["10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%"];
+
+        var fsize = ["300%", "310%", "320%", "330%", "340%", "350%", "360%", "380%", "390%", "400%"];
+
+        var showdiv = document.getElementById("showdiv");
+        var num = Math.floor(Math.random() * 11);
+
+        function xianshi() {
+            var inp = document.getElementById("youdian1");
+
+            for (var i = 0, time = 500; i < 19; i++ , time = time + 500) {
+                setTimeout(function (i, youdian) {
+                    var p_x = Math.floor(Math.random() * 9);
+                    var p_y = Math.floor(Math.random() * 8);
+                    var fcolor = Math.floor(Math.random() * 11);
+                    var fs = Math.floor(Math.random() * 10);
+                    inp.innerHTML = youdian[i];
+                    inp.style.marginLeft = position_x[p_x];
+                    inp.style.marginTop = position_y[p_y];
+                    inp.style.color = colors[fcolor];
+                    inp.style.fontSize = fsize[fs];
+                }, time, i, youdian, position_x, position_y, colors, fsize);
+            }
+        }
+
+
+
+    </script>
+    <style>
+        #showdiv {
+            width: 100%;
+            height: 100%;
 
         }
-    </script>
-    <style >
-       #para1{
 
-        text-align: center;
+        #showdiv2 {
+            width: 100%;
+            height: 90%;
+            margin-top: 10%;
+        }
 
-           /* width: 200px;
-           height: 100px; */
-      
-       }
-       #para2{
+        body {
+            background-image: url('veer-304884846.jpg');
 
-        float: left;
-           width: 40%;
-           height: 100%;
-       }
+        }
+
+        input {
+            font: 1em sans-serif;
+            font-family: "萝莉体 第二版";
+        }
     </style>
 </head>
+
 <body>
-    
     <!-- <div id="para2"></div> -->
-    <div id="para1">
-            <input type="button" value="点击一下,嘿嘿" onclick="xianshi() ">
+    <div id="showdiv">
+        <input type="button" value="点击一下,嘿嘿" onclick="xianshi() ">
+        <div id="showdiv2">
+            <p id="youdian1"></p>
+        </div>
     </div>
 
-
 </body>
+
 </html>
